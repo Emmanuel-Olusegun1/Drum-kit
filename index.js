@@ -1,5 +1,5 @@
 // For devices with keyboard
-window.addEventListener('keydown', function(e) {
+function playSounds(e) {
    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
 
@@ -8,7 +8,10 @@ window.addEventListener('keydown', function(e) {
    audio.currentTime = 0;
    audio.play();
    key.classList.add('playing');
-});
+}
+
+window.addEventListener('keydown', playSounds);
+
 
 window.addEventListener('keyup', function(e) {
    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
@@ -32,6 +35,7 @@ function playSound(e) {
 
 function removeEffect(e) {
    e.currentTarget.classList.remove('playing');
+
 }
 
 const keys = document.querySelectorAll('.key');
