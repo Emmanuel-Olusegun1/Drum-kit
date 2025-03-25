@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Drum Kit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .playing {
+            transform: scale(1.1);
+            transition: transform 0.1s ease-in-out;
+            border: 2px solid #52a452;
+            box-shadow: 0 0 10px #52a452;
+        }
+    </style>
+</head>
+
+<body class="bg-[url('bg.jpeg')] bg-cover bg-center bg-no-repeat flex items-center justify-center h-screen">
+    <div class="keys grid grid-cols-3 gap-4 text-white text-center">
+        <div data-key="65" class="key bg-green-700 p-6 rounded-lg shadow-md hover:bg-green-600 transition cursor-pointer">
+            <kbd class="text-2xl font-bold">A</kbd>
+            <span class="sound block text-sm mt-2">Clap</span>
+        </div>
+        <div data-key="83" class="key bg-green-700 p-6 rounded-lg shadow-md hover:bg-green-600 transition cursor-pointer">
+            <kbd class="text-2xl font-bold">S</kbd>
+            <span class="sound block text-sm mt-2">Hihat</span>
+        </div>
+        <div data-key="68" class="key bg-green-700 p-6 rounded-lg shadow-md hover:bg-green-600 transition cursor-pointer">
+            <kbd class="text-2xl font-bold">D</kbd>
+            <span class="sound block text-sm mt-2">Kick</span>
+        </div>
+        <div data-key="70" class="key bg-green-700 p-6 rounded-lg shadow-md hover:bg-green-600 transition cursor-pointer ">
+            <kbd class="text-2xl font-bold">F</kbd>
+            <span class="sound block text-sm mt-2">Openhat</span>
+        </div>
+        <div data-key="71" class="key bg-green-700 p-6 rounded-lg shadow-md hover:bg-green-600 transition cursor-pointer">
+            <kbd class="text-2xl font-bold">G</kbd>
+            <span class="sound block text-sm mt-2">Boom</span>
+        </div>
+        <div data-key="72" class="key bg-green-700 p-6 rounded-lg shadow-md hover:bg-green-600 transition cursor-pointer">
+            <kbd class="text-2xl font-bold">H</kbd>
+            <span class="sound block text-sm mt-2">Ride</span>
+        </div>
+        <div data-key="74" class="key bg-green-700 p-6 rounded-lg shadow-md hover:bg-green-600 transition cursor-pointer">
+            <kbd class="text-2xl font-bold">J</kbd>
+            <span class="sound block text-sm mt-2">Snare</span>
+        </div>
+        <div data-key="75" class="key bg-green-700 p-6 rounded-lg shadow-md hover:bg-green-600 transition cursor-pointer">
+            <kbd class="text-2xl font-bold">K</kbd>
+            <span class="sound block text-sm mt-2">Tom</span>
+        </div>
+        <div data-key="76" class="key bg-green-700 p-6 rounded-lg shadow-md hover:bg-green-600 transition cursor-pointer">
+            <kbd class="text-2xl font-bold">L</kbd>
+            <span class="sound block text-sm mt-2">Tink</span>
+        </div>
+    </div>
+
+    <audio data-key="65" src="clap.wav"></audio>
+    <audio data-key="83" src="hihat.wav"></audio>
+    <audio data-key="68" src="kick.wav"></audio>
+    <audio data-key="70" src="openhat.wav"></audio>
+    <audio data-key="71" src="boom.ogg"></audio>
+    <audio data-key="72" src="ride.wav"></audio>
+    <audio data-key="74" src="snare.wav"></audio>
+    <audio data-key="75" src="tom.wav"></audio>
+    <audio data-key="76" src="tink.wav"></audio>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
