@@ -3,6 +3,7 @@ function playSounds(e) {
    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
 
+   key.classList.remove('playing');
    if (!audio || !key) return;
 
    audio.currentTime = 0;
@@ -11,13 +12,7 @@ function playSounds(e) {
 }
 
 window.addEventListener('keydown', playSounds);
-
-
-window.addEventListener('keyup', function(e) {
-   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-   if (!key) return;
-   key.classList.remove('playing');
-});
+window.removeEventListener('keyup', playSounds);
 
 // For mobile onclick function
 
